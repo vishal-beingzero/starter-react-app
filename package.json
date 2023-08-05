@@ -28,7 +28,9 @@
     ]
   },
   "dependencies": {
-    "express": "^4.17.3"
+    "express": "^4.17.3",
+    "file-saver": "^2.0.5",
+    "react-dropzone": "^14.2.3"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^5.16.2",
