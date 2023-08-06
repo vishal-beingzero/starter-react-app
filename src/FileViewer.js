@@ -58,7 +58,7 @@ const FileViewer = () => {
   }
 
   const analyseHandle = () => {
-    setanalysecv(false)
+    setanalysecv(true)
     setDisplayPie(false)
   }
   const handleCV = (event) => {
