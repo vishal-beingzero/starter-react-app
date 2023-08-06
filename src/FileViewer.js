@@ -58,7 +58,7 @@ const FileViewer = () => {
   }
 
   const analyseHandle = () => {
-    setanalysecv(true)
+    setanalysecv(false)
     setDisplayPie(false)
   }
   const handleCV = (event) => {
@@ -199,7 +199,7 @@ const FileViewer = () => {
              {analysecv && cv && (
               <>
                 <h5 className="mb-3 mt-2">A view of provided Job description</h5>
-                <div className="display-section">
+                <div className="display-section2">
                   <pre className="border p-3 bg-light text-dark">{cv}</pre>
                 </div>
               </>
