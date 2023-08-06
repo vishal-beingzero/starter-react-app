@@ -3,7 +3,7 @@ import { BiShow, BiHide } from 'react-icons/bi';
 import { AiOutlinePieChart } from 'react-icons/ai';
 import { FaUpload, FaSearchengin } from 'react-icons/fa';
 import { Chart } from "react-google-charts";
-
+import './helper.css'
 const FileViewer = () => {
   const[fileContent, setFileContent] = useState('');
   const [fileName, setFileName] = useState('');

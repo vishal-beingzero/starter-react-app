@@ -1,0 +1,7 @@
+/* fileViewerStyle.css */
+/* Styles for the display section */
+.display-section {
+    height: 170px; /* Set the desired fixed height here */
+    overflow-y: auto; /* Enable vertical scrolling if content exceeds the fixed height */
+  }
+  
