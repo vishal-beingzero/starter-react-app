@@ -4,6 +4,7 @@ import { AiOutlinePieChart } from 'react-icons/ai';
 import { FaUpload, FaSearchengin } from 'react-icons/fa';
 import { Chart } from "react-google-charts";
 import './helper.css'
+
 const FileViewer = () => {
   const[fileContent, setFileContent] = useState('');
   const [fileName, setFileName] = useState('');
@@ -15,6 +16,7 @@ const FileViewer = () => {
   const [loading, setLoading] = useState(false); // Added state variable for loading animation
   
   const [displayPie, setDisplayPie] = useState(false);
+  const [warn, setwarn] = useState(true);
 
   const [info, setInfo] = useState(false);
   const [analysecv, setanalysecv] = useState(false);
@@ -53,13 +55,16 @@ const FileViewer = () => {
     }
   };
   const handlepiechart=()=>{
-    setDisplayPie(true)
+    setwarn(false)
     setanalysecv(false)
+    setDisplayPie(true)
   }
-
+  
   const analyseHandle = () => {
+    setwarn(false)
     setanalysecv(true)
     setDisplayPie(false)
+
   }
   const handleCV = (event) => {
     const file = event.target.files[0];
@@ -178,7 +183,7 @@ const FileViewer = () => {
                 <div className="mb-3 mt-3">
                   <input type="file" className="form-control" accept=".pdf,.txt" onChange={handleCV} />
                 </div>
-                {!analysecv && (
+                {warn && (
                 <div className="alert alert-info">
                   <strong>Drag and Drop</strong> or <strong>Select</strong> Your CV
                 </div>
@@ -198,8 +203,8 @@ const FileViewer = () => {
             )}
              {analysecv && cv && (
               <>
-                <h5 className="mb-3 mt-2">A view of provided Job description</h5>
-                <div className="display-section2">
+                <h5 className="mb-3 mt-2">A view of Cover Letter</h5>
+                <div className="display-section">
                   <pre className="border p-3 bg-light text-dark">{cv}</pre>
                 </div>
               </>
