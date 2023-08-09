@@ -262,7 +262,7 @@ const FileViewer = () => {
           <div className="card-body">
             <div className="alert alert-primary">
               {!disable && (
-                <>
+                <>  
                   <strong>Note : </strong>Drag or Choose job description file .
                 </>
               )}
@@ -353,22 +353,22 @@ const FileViewer = () => {
 
                   {!isLoading &&
                     <>
-                      {missingSkills.length != 0 &&
+                      {missingSkills!=undefined && missingSkills.length != 0 &&
                         <div class="alert alert-danger mt-2" role="alert">
                           There are certain <strong>skills and qualities </strong>which  this job is expecting but <strong> did not found in your CV.</strong>
                         </div>
                       }
-                      {missingSkills.length == 0 &&
+                      {missingSkills!=undefined && missingSkills.length == 0 &&
                         <div class="alert alert-successmb-2" role="alert">
                           Your CV <strong>perfectly matched </strong>with our requirements <BsFire />
                         </div>
                       }
                       <div className="missing-skills-container">
                         <ul className="missing-skills-list" style={{ columns: '3' }}>
-                          {displayedSkills.length > 0 && displayedSkills.map((skill, index) => (
+                          {displayedSkills!=undefined && displayedSkills.length > 0 && displayedSkills.map((skill, index) => (
                             <li key={index}>{skill}</li>
                           ))}
-                          {displayedSkills.length < missingSkills.length &&
+                          {displayedSkills!=undefined && displayedSkills.length < missingSkills.length &&
                             <li>...</li>
                           }
                         </ul>
